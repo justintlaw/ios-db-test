@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ApplicantTracker.swift
 //  FinalPrep
 //
 //  Created by Justin on 12/13/21.
@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ApplicantTracker: View {
     var body: some View {
         Text("Hello, world!")
             .padding()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ApplicantTracker_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ApplicantTracker()
     }
 }

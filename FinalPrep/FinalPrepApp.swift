@@ -11,7 +11,7 @@ import SwiftUI
 struct FinalPrepApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ApplicantTracker()
         }
     }
 }
