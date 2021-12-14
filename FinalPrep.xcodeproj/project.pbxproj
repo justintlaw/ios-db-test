@@ -16,6 +16,9 @@
 		D0862DAE2768306400A54434 /* Applicant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0862DAD2768306400A54434 /* Applicant.swift */; };
 		D0862DB0276832BF00A54434 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0862DAF276832BF00A54434 /* DatabaseHelper.swift */; };
 		D0862DB427683C2600A54434 /* ApplicantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0862DB327683C2600A54434 /* ApplicantViewModel.swift */; };
+		D0862DB927683FF000A54434 /* AddApplicant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0862DB827683FF000A54434 /* AddApplicant.swift */; };
+		D0862DBF2768403500A54434 /* ApplicantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0862DBE2768403500A54434 /* ApplicantView.swift */; };
+		D0862DC12768404F00A54434 /* ApplicantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0862DC02768404F00A54434 /* ApplicantListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		D0862DAD2768306400A54434 /* Applicant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Applicant.swift; sourceTree = "<group>"; };
 		D0862DAF276832BF00A54434 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		D0862DB327683C2600A54434 /* ApplicantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantViewModel.swift; sourceTree = "<group>"; };
+		D0862DB827683FF000A54434 /* AddApplicant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddApplicant.swift; sourceTree = "<group>"; };
+		D0862DBE2768403500A54434 /* ApplicantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantView.swift; sourceTree = "<group>"; };
+		D0862DC02768404F00A54434 /* ApplicantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantListView.swift; sourceTree = "<group>"; };
 		F383F044E2ED40AC798E5C20 /* Pods-FinalPrep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalPrep.debug.xcconfig"; path = "Target Support Files/Pods-FinalPrep/Pods-FinalPrep.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +127,7 @@
 		D0862DB127683B5200A54434 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D0862DB527683FB500A54434 /* Navigation and Screens */,
 				D0862D9B2768233E00A54434 /* FinalPrepApp.swift */,
 				D0862D9D2768233E00A54434 /* ApplicantTracker.swift */,
 			);
@@ -133,6 +140,16 @@
 				D0862DB327683C2600A54434 /* ApplicantViewModel.swift */,
 			);
 			name = "View Model";
+			sourceTree = "<group>";
+		};
+		D0862DB527683FB500A54434 /* Navigation and Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D0862DC02768404F00A54434 /* ApplicantListView.swift */,
+				D0862DBE2768403500A54434 /* ApplicantView.swift */,
+				D0862DB827683FF000A54434 /* AddApplicant.swift */,
+			);
+			path = "Navigation and Screens";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,9 +268,12 @@
 			files = (
 				D0862D9E2768233E00A54434 /* ApplicantTracker.swift in Sources */,
 				D0862DB427683C2600A54434 /* ApplicantViewModel.swift in Sources */,
+				D0862DC12768404F00A54434 /* ApplicantListView.swift in Sources */,
+				D0862DB927683FF000A54434 /* AddApplicant.swift in Sources */,
 				D0862DB0276832BF00A54434 /* DatabaseHelper.swift in Sources */,
 				D0862D9C2768233E00A54434 /* FinalPrepApp.swift in Sources */,
 				D0862DAE2768306400A54434 /* Applicant.swift in Sources */,
+				D0862DBF2768403500A54434 /* ApplicantView.swift in Sources */,
 				D0862DAB2768279F00A54434 /* ApplicantDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

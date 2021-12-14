@@ -11,7 +11,7 @@ import GRDB
 class ApplicantDatabase {
     // MARK: Constants
     struct Constant {
-        static let fileName = "applicant.21"
+        static let fileName = "applicant.1"
         static let fileExtension = "sqlite"
     }
     
@@ -43,10 +43,11 @@ class ApplicantDatabase {
         migrator.registerMigration("createProject") { db in
             try db.create(table: "applicant", ifNotExists: true) { t in
 //                t.autoIncrementedPrimaryKey("id")
-                t.primaryKey(["id"])
+                t.column("id", .text).notNull().unique()
                 t.column("name", .text).notNull()
-                t.column("age", .numeric)
+                t.column("age", .numeric).notNull()
                 t.column("email", .text).notNull()
+                t.primaryKey(["id"])
             }
         }
 

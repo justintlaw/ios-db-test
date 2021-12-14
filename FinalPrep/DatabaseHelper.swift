@@ -14,7 +14,7 @@ class DatabaseHelper {
     // MARK: Constants
     
     struct Constant {
-        static let fileName = "applicant.21"
+        static let fileName = "applicant.1"
         static let fileExtension = "sqlite"
     }
     
@@ -40,6 +40,12 @@ class DatabaseHelper {
             
             if let queue = try? DatabaseQueue(path: fileUrl.path) {
                 dbQueue = queue
+                
+                do {
+                    try ApplicantDatabase.migrator.migrate(dbQueue)
+                } catch {
+                    fatalError("Failed to create applicant table")
+                }
                 
                 if !fileExists {
                     // createWorkoutReportTable
@@ -76,8 +82,8 @@ class DatabaseHelper {
     }
     
     func updateApplicant(_ record: Applicant) {
-        try? dbQueue.write { db in
-            try? record.update(db)
+        try! dbQueue.write { db in
+            try! record.update(db)
         }
     }
     

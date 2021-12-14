@@ -21,6 +21,7 @@ class ApplicantViewModel: ObservableObject {
 
         if let index = applicants.firstIndex(of: record) {
             applicants.remove(at: index)
+//            objectWillChange.send()
         }
     }
     
@@ -30,11 +31,23 @@ class ApplicantViewModel: ObservableObject {
         applicants.append(record)
     }
     
-    func updateApplicant(record: Applicant) {
-        DatabaseHelper.shared.updateApplicant(record)
+    func updateApplicant(record: Applicant, name: String?, age: Int?, email: String?) {
+        var updatedRecord = record
+
+        if let updatedName = name {
+            updatedRecord.name = updatedName
+        }
+        if let updatedAge = age {
+            updatedRecord.age = updatedAge
+        }
+        if let updatedEmail = email {
+            updatedRecord.email = updatedEmail
+        }
+
+        DatabaseHelper.shared.updateApplicant(updatedRecord)
         
-        if let index = applicants.firstIndex(of: record) {
-            applicants[index] = record
+        if let index = applicants.firstIndex(of: updatedRecord) {
+            applicants[index] = updatedRecord
         }
     }
     

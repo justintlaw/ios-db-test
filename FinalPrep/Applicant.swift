@@ -18,7 +18,7 @@ struct Applicant : TableRecord, FetchableRecord, PersistableRecord, Identifiable
         static let id = "id"
         static let name = "name"
         static let age = "age"
-        static let email = "email'"
+        static let email = "email"
     }
     
     // MARK: Properties
@@ -33,7 +33,7 @@ struct Applicant : TableRecord, FetchableRecord, PersistableRecord, Identifiable
     init() {
         id = UUID().uuidString
         name = ""
-        age = 0
+        age = 1
         email = ""
     }
     
@@ -45,17 +45,11 @@ struct Applicant : TableRecord, FetchableRecord, PersistableRecord, Identifiable
     }
     
     init (row: Row) {
-        id = row["applicant_id"] ?? row[Table.id]
+        id = row[Table.id]
         name = row[Table.name]
         age = row [Table.age]
         email = row [Table.email]
     }
-    
-    // MARK: Helpers
-//
-//    func insertApplicant(_ applicant: Applicant) {
-//        try?
-//    }
 
     // MARK: EncodableRecord
     
@@ -71,5 +65,12 @@ struct Applicant : TableRecord, FetchableRecord, PersistableRecord, Identifiable
 extension Applicant : Equatable {
     static func ==(lhs: Applicant, rhs: Applicant) -> Bool {
         return lhs.id == rhs.id
+    }
+}
+
+// MARK: Conform to hashable
+extension Applicant : Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

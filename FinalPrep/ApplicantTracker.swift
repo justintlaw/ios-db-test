@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ApplicantTracker: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            ApplicantListView().environmentObject(ApplicantViewModel())
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
